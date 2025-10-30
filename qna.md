@@ -36,7 +36,7 @@ Yes, one of the downsides of a `deque` is that accessing elements in the middle 
 
 ### 9. Using the timeit module was a nice touch. You mentioned that a lot of the functions are written in C, making it more efficient than when done in python. If you were to increase the size of each combination from 3 to another number, would the time saved still be around 15% as it was during your example?
 
-Interesting question. I tested this a few different ways, if you want to see the details I added everything to the bottom of the bottom of the notebook [here](https://github.com/samuelikohn/collections-and-itertools/blob/main/main.ipynb). TL;DR, as you scale up both the number of combinations and the length of each combination, the percentage performace gain increases. In both languages, the length of the combination affects the time more than the number of combinations, so while both are significant (over 90% faster in some test cases), `itertools.combinations` helps you more for longer combinations. Although, it seems that the operation you're performing on the combinations matters more than the iteration method, based on the numbers I found vs. the 10-15% in the video. Interestingly, there was a case where doing things without `itertools` was faster, which may warrant more looking into.
+Interesting question. I tested this a few different ways, if you want to see the details I added everything to the bottom of the notebook [here](https://github.com/samuelikohn/collections-and-itertools/blob/main/main.ipynb). TL;DR, as you scale up both the number of combinations and the length of each combination, the percentage performace gain increases. In both languages, the length of the combination affects the time more than the number of combinations, so while both are significant (over 90% faster in some test cases), `itertools.combinations` helps you more for longer combinations. Although, it seems that the operation you're performing on the combinations matters more than the iteration method, based on the numbers I found vs. the 10-15% in the video. Interestingly, there was a case where doing things without `itertools` was faster, which may warrant more looking into.
 
 ### 10. The use of ordered dict in your 'dollar-store-LRU cache' was very clever. I am trying to see how the running time of this code might be if we scale up into a longer dict. Right now it appears to be O(1) time Is there a way to dynamically resize the cache using existing itertools in collections?
 
@@ -78,4 +78,5 @@ Created combinations object
 (1, 2)
 (1, 3)
 (2, 3)
+
 ```
